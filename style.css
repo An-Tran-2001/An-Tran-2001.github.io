@@ -131,6 +131,44 @@ a:hover {
     border: 1px solid var(--border-color);
 }
 
+/* Nav Actions */
+.nav-actions {
+    margin-top: auto;
+}
+
+.nav-actions .btn-download {
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.8rem;
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-download:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+    text-decoration: none;
+}
+
+.btn-download svg {
+    transition: transform 0.2s ease;
+}
+
+.btn-download:hover svg {
+    transform: translateY(2px);
+}
+
 /* Sections */
 .cv-section {
     margin-bottom: 2.5rem;
@@ -280,6 +318,7 @@ footer {
         width: 100%;
         height: auto;
         flex-direction: row;
+        align-items: center;
         padding: 1rem;
         border-right: none;
         border-bottom: 1px solid var(--border-color);
@@ -302,6 +341,15 @@ footer {
     }
     .nav-links a:hover {
         border-left: none;
+    }
+    .nav-actions {
+        margin-top: 0;
+        margin-left: 1.25rem;
+    }
+    .nav-actions .btn-download {
+        padding: 0.4rem 0.8rem;
+        white-space: nowrap;
+        width: auto;
     }
     .container {
         padding: 2rem 1.5rem;
