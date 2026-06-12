@@ -30,6 +30,22 @@ html {
     scroll-behavior: smooth;
 }
 
+html[lang="en"] body {
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+html[lang="vn"] body {
+    font-family: 'Be Vietnam Pro', 'Inter', -apple-system, sans-serif;
+}
+
+html[lang="jp"] body {
+    font-family: 'Noto Sans JP', -apple-system, sans-serif;
+}
+
+html[lang="cn"] body {
+    font-family: 'Noto Sans SC', -apple-system, sans-serif;
+}
+
 body {
     font-family: 'Inter', -apple-system, sans-serif;
     background-color: var(--bg-color);
@@ -38,6 +54,17 @@ body {
     font-size: 15px;
     transition: background-color 0.3s ease, color 0.3s ease;
     padding-left: 220px;
+}
+
+#neural-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.6;
 }
 
 a {
@@ -134,6 +161,45 @@ a:hover {
 /* Nav Actions */
 .nav-actions {
     margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.lang-switcher select {
+    width: 100%;
+    padding: 0.5rem 2rem 0.5rem 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234b5563%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem top 50%;
+    background-size: 0.65rem auto;
+}
+
+[data-theme="dark"] .lang-switcher select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%239ca3af%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+}
+
+.lang-switcher select:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+.lang-switcher select option {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
 }
 
 .nav-actions .btn-download {
@@ -345,6 +411,14 @@ footer {
     .nav-actions {
         margin-top: 0;
         margin-left: 1.25rem;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .lang-switcher select {
+        width: auto;
+        padding: 0.4rem 1.8rem 0.4rem 0.6rem;
+        background-position: right 0.5rem top 50%;
     }
     .nav-actions .btn-download {
         padding: 0.4rem 0.8rem;
@@ -367,4 +441,174 @@ footer {
     .cv-item-header .date {
         margin-top: 0.1rem;
     }
+}
+
+/* =========================================
+   Neural AI Door Overlay Animation
+   ========================================= */
+.ai-door-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    background: transparent;
+}
+
+.door {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 1;
+}
+
+.door-left {
+    border-right: 1px solid transparent;
+    animation: slideLeft 0.8s cubic-bezier(0.85, 0, 0.15, 1) 1.9s forwards;
+}
+
+.door-right {
+    border-left: 1px solid transparent;
+    animation: slideRight 0.8s cubic-bezier(0.85, 0, 0.15, 1) 1.9s forwards;
+}
+
+.split-line {
+    position: absolute;
+    top: 0; left: 50%;
+    width: 2px; height: 100vh;
+    background-color: var(--text-primary);
+    transform: translateX(-50%) scaleY(0);
+    z-index: 3;
+    animation: shootLine 0.3s cubic-bezier(0.85, 0, 0.15, 1) 1.7s forwards, fadeLine 0.4s ease 2.1s forwards;
+}
+
+.door-center-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    animation: fadeOutLogo 0.5s cubic-bezier(0.85, 0, 0.15, 1) 1.5s forwards;
+    pointer-events: none;
+}
+
+/* Neural Network SVG Styling */
+.neural-network {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 1.5rem auto;
+    overflow: visible;
+    animation: collapseNetwork 0.5s cubic-bezier(0.85, 0, 0.15, 1) 1.5s forwards;
+}
+
+.synapse {
+    stroke: var(--text-secondary);
+    stroke-width: 1;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    opacity: 0;
+}
+
+.s1 { animation: drawLine 0.6s ease 0.1s forwards; }
+.s2 { animation: drawLine 0.6s ease 0.2s forwards; }
+.s3 { animation: drawLine 0.6s ease 0.3s forwards; }
+.s4 { animation: drawLine 0.6s ease 0.1s forwards; }
+.s5 { animation: drawLine 0.5s ease 0.5s forwards; }
+.s6 { animation: drawLine 0.5s ease 0.6s forwards; }
+.s7 { animation: drawLine 0.5s ease 0.4s forwards; }
+.s8 { animation: drawLine 0.5s ease 0.7s forwards; }
+.s9 { animation: drawLine 0.6s ease 0.2s forwards; }
+
+.node {
+    fill: var(--text-primary);
+    transform-origin: center;
+    transform-box: fill-box;
+    transform: scale(0);
+}
+
+.center-node {
+    animation: popNode 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s forwards;
+}
+
+.pulse-node {
+    fill: transparent;
+    stroke: var(--text-primary);
+    stroke-width: 0.5;
+    animation: pulseRing 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.n1 { animation: popNode 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s forwards; }
+.n2 { animation: popNode 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s forwards; }
+.n3 { animation: popNode 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.6s forwards; }
+.n4 { animation: popNode 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s forwards; }
+.n5 { animation: popNode 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.8s forwards; }
+.n6 { animation: popNode 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.9s forwards; }
+.n7 { animation: popNode 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.7s forwards; }
+
+/* Text Styling */
+.door-center-logo .ai-text {
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: 6px;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+}
+
+.door-center-logo .ai-subtext {
+    font-family: inherit;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Keyframes */
+@keyframes slideLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes slideRight {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes shootLine {
+    0% { transform: translateX(-50%) scaleY(0); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateX(-50%) scaleY(1); opacity: 1; }
+}
+
+@keyframes fadeLine {
+    0% { opacity: 1; }
+    100% { opacity: 0; width: 0; }
+}
+
+@keyframes fadeOutLogo {
+    0% { opacity: 1; transform: translate(-50%, -50%); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); visibility: hidden; }
+}
+
+@keyframes drawLine {
+    to { stroke-dashoffset: 0; opacity: 0.4; }
+}
+
+@keyframes popNode {
+    to { transform: scale(1); }
+}
+
+@keyframes pulseRing {
+    0% { transform: scale(0.5); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+@keyframes collapseNetwork {
+    0% { transform: scale(1); opacity: 1; filter: blur(0); }
+    100% { transform: scale(0.1) rotate(90deg); opacity: 0; filter: blur(4px); }
 }

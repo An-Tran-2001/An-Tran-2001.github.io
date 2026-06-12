@@ -4,23 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRAN VAN AN - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="translations.js"></script>
 </head>
 <body>
+    <canvas id="neural-bg"></canvas>
+    <div class="ai-door-overlay" id="door-overlay">
+        <div class="door door-left"></div>
+        <div class="door door-right"></div>
+        <div class="split-line"></div>
+        <div class="door-center-logo">
+            <svg class="neural-network" viewBox="0 0 200 200">
+                <g class="synapses">
+                    <line class="synapse s1" x1="100" y1="100" x2="40" y2="40" />
+                    <line class="synapse s2" x1="100" y1="100" x2="150" y2="30" />
+                    <line class="synapse s3" x1="100" y1="100" x2="170" y2="120" />
+                    <line class="synapse s4" x1="100" y1="100" x2="60" y2="160" />
+                    <line class="synapse s5" x1="40" y1="40" x2="20" y2="90" />
+                    <line class="synapse s6" x1="150" y1="30" x2="190" y2="70" />
+                    <line class="synapse s7" x1="60" y1="160" x2="110" y2="180" />
+                    <line class="synapse s8" x1="170" y1="120" x2="190" y2="70" />
+                    <line class="synapse s9" x1="100" y1="100" x2="110" y2="180" />
+                </g>
+                <g class="nodes">
+                    <circle class="node outer-node n1" cx="40" cy="40" r="3" />
+                    <circle class="node outer-node n2" cx="150" cy="30" r="4" />
+                    <circle class="node outer-node n3" cx="170" cy="120" r="3" />
+                    <circle class="node outer-node n4" cx="60" cy="160" r="4" />
+                    <circle class="node outer-node n5" cx="20" cy="90" r="2" />
+                    <circle class="node outer-node n6" cx="190" cy="70" r="2" />
+                    <circle class="node outer-node n7" cx="110" cy="180" r="2" />
+                    <circle class="node center-node" cx="100" cy="100" r="5" />
+                    <circle class="node pulse-node" cx="100" cy="100" r="12" />
+                </g>
+            </svg>
+            <div class="ai-text">TRAN VAN AN</div>
+            <div class="ai-subtext">AI ENGINEER PORTFOLIO</div>
+        </div>
+    </div>
     <nav class="side-nav">
         <div class="nav-links">
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#prize">Prize</a>
+            <a href="#education" data-i18n="education_nav">Education</a>
+            <a href="#skills" data-i18n="skills_nav">Skills</a>
+            <a href="#experience" data-i18n="experience_nav">Experience</a>
+            <a href="#projects" data-i18n="projects_nav">Projects</a>
+            <!-- <a href="#certifications">Certifications</a> -->
+            <a href="#prize" data-i18n="prize_nav">Prize</a>
         </div>
         <div class="nav-actions">
+            <div class="lang-switcher">
+                <select id="lang-select" aria-label="Select Language">
+                    <option value="en" selected>EN</option>
+                    <option value="vn">VN</option>
+                    <option value="jp">JP</option>
+                    <option value="cn">CN</option>
+                </select>
+            </div>
             <a href="assets/CV_06_2026.pdf" download="TRAN_VAN_AN_CV.pdf" class="btn-download">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                Download CV
+                <span data-i18n="download_cv">Download CV</span>
             </a>
         </div>
     </nav>
@@ -33,9 +76,9 @@
         <header class="profile-header">
             <div class="profile-info">
                 <h1>TRAN VAN AN</h1>
-                <h2 class="subtitle">AI Engineer</h2>
+                <h2 class="subtitle" data-i18n="subtitle">AI Engineer</h2>
                 <div class="contact-info">
-                    <p>Hanoi | <a href="mailto:tranandeveloper@tinhvan.com">tranandeveloper@gmail.com</a> | <a href="tel:+84329962262">+84 329 962 262</a></p>
+                    <p><span data-i18n="location">Hanoi</span> | <a href="mailto:tranandeveloper@tinhvan.com">tranandeveloper@gmail.com</a> | <a href="tel:+84329962262">+84 329 962 262</a></p>
                     <p><a href="https://github.com/An-Tran-2001" target="_blank" rel="noopener noreferrer">github.com/An-Tran</a> | <a href="https://www.linkedin.com/in/an-tran-694760304" target="_blank" rel="noopener noreferrer">linkedin.com/in/an-tran</a></p>
                 </div>
             </div>
@@ -46,50 +89,49 @@
 
         <main>
             <section id="education" class="cv-section">
-                <h3>EDUCATION</h3>
+                <h3 data-i18n="education_title">EDUCATION</h3>
                 <div class="cv-item">
                     <div class="cv-item-header">
-                        <h4>Hanoi University of Mining and Technology</h4>
+                        <h4 data-i18n="uni_name">Hanoi University of Mining and Technology</h4>
                         <span class="date">2019 – 2024</span>
                     </div>
                     <div class="cv-item-subheader">
-                        <span>Major: Computer Science</span>
-                        <span>Graduation Classification: Engineer - Good</span>
+                        <span data-i18n="major">Major: Computer Science</span>
+                        <span data-i18n="grad_class">Graduation Classification: Engineer - Good</span>
                     </div>
                 </div>
             </section>
 
             <section id="skills" class="cv-section">
-                <h3>TECHNICAL SKILLS</h3>
+                <h3 data-i18n="skills_title">TECHNICAL SKILLS</h3>
                 <ul class="skills-list">
-                    <li><strong>AI/ML:</strong> Expertise in data analysis, data processing, machine learning, deep learning (Neural Networks), advanced RAG, and prompt engineering (Prompt Template).</li>
-                    <li><strong>Programming:</strong> Proficient in Python (main), JavaScript (secondary), with basic knowledge of other languages.</li>
-                    <li><strong>Database Management Systems:</strong> MySQL, PostgreSQL, MongoDB, Redis, Cosmos DB, etc.</li>
-                    <li><strong>Cloud:</strong> Hands-on experience with Azure (Azure ML, OpenAI, Cosmos DB...) and AWS (SageMaker, Bedrock, S3...).</li>
-                    <li><strong>Development:</strong> Familiar with Windows, Linux environments.</li>
-                    <li><strong>Software Design:</strong> Strong grasp of design patterns (Singleton, Factory, Observer, Strategy) and architectural models (MVC, MVT, DDD, Microservices).</li>
-                    <li><strong>English:</strong> Capable of reading technical documents and handling simple communication in English.</li>
+                    <li><strong>AI/ML:</strong> <span data-i18n="skill_aiml">Expertise in data analysis, data processing, machine learning, deep learning (Neural Networks), advanced RAG, and prompt engineering (Prompt Template).</span></li>
+                    <li><strong>Programming:</strong> <span data-i18n="skill_prog">Proficient in Python (main), JavaScript (secondary), with basic knowledge of other languages.</span></li>
+                    <li><strong>Database Management Systems:</strong> <span data-i18n="skill_db">MySQL, PostgreSQL, MongoDB, Redis, Cosmos DB, etc.</span></li>
+                    <li><strong>Cloud:</strong> <span data-i18n="skill_cloud">Hands-on experience with Azure (Azure ML, OpenAI, Cosmos DB...) and AWS (SageMaker, Bedrock, S3...).</span></li>
+                    <li><strong>Development:</strong> <span data-i18n="skill_dev">Familiar with Windows, Linux environments.</span></li>
+                    <li><strong>Software Design:</strong> <span data-i18n="skill_design">Strong grasp of design patterns (Singleton, Factory, Observer, Strategy) and architectural models (MVC, MVT, DDD, Microservices).</span></li>
                 </ul>
             </section>
 
             <section id="experience" class="cv-section">
-                <h3>WORK EXPERIENCE</h3>
+                <h3 data-i18n="exp_title">WORK EXPERIENCE</h3>
                 <div class="cv-item">
                     <div class="cv-item-header">
                         <h4>TinhVan Software JSC</h4>
                         <span class="date">01/2023 – Current</span>
                     </div>
-                    <p class="role">Position: AI Engineer</p>
+                    <p class="role" data-i18n="exp_pos_1">Position: AI Engineer</p>
                     <ul class="bullet-list">
-                        <li>Develop AI models for chatbot systems and document processing.</li>
-                        <li>Work on RAG technique, query optimization, and backend/frontend development.</li>
-                        <li>Research and fine-tune LLM/VLM using Azure/AWS Cloud.</li>
+                        <li data-i18n="exp_desc_1_1">Develop AI models for chatbot systems and document processing.</li>
+                        <li data-i18n="exp_desc_1_2">Work on RAG technique, query optimization, and backend/frontend development.</li>
+                        <li data-i18n="exp_desc_1_3">Research and fine-tune LLM/VLM using Azure/AWS Cloud.</li>
                     </ul>
                 </div>
             </section>
 
             <section id="projects" class="cv-section">
-                <h3>PROJECT EXPERIENCE <span class="note">(Main Projects Only)</span></h3>
+                <h3><span data-i18n="proj_title">PROJECT EXPERIENCE</span> <span class="note" data-i18n="proj_note">(Main Projects Only)</span></h3>
                 
                 <div class="cv-item">
                     <div class="cv-item-header">
@@ -97,11 +139,11 @@
                         <span class="date">05/2026 – Current</span>
                     </div>
                     <ul class="bullet-list">
-                        <li><strong>Project Size:</strong> 04 members</li>
-                        <li><strong>Position:</strong> Technical Lead</li>
-                        <li><strong>Project Description:</strong> Research and experiment with advanced AI agent technologies for a Japanese company. Focus on integrating computer vision and speech processing for meeting analysis and AI-based automated scoring.</li>
-                        <li><strong>Job Description:</strong> Supported the team on technical issues. Pre-designed core components to ensure easy maintenance, and provided technical advice and solutions when necessary.</li>
-                        <li><strong>Core Technologies:</strong> Azure OpenAI Service, Azure Vision Service, Azure Speech Service, AI Agents, etc.</li>
+                        <li><strong data-i18n="proj_size">Project Size:</strong> <span data-i18n="proj_mem_4">04 members</span></li>
+                        <li><strong data-i18n="proj_pos">Position:</strong> <span data-i18n="pos_tech_lead">Technical Lead</span></li>
+                        <li><strong data-i18n="proj_desc">Project Description:</strong> <span data-i18n="dit_desc">Research and experiment with advanced AI agent technologies for a Japanese company. Focus on integrating computer vision and speech processing for meeting analysis and AI-based automated scoring.</span></li>
+                        <li><strong data-i18n="proj_job">Job Description:</strong> <span data-i18n="dit_job">Supported the team on technical issues. Pre-designed core components to ensure easy maintenance, and provided technical advice and solutions when necessary.</span></li>
+                        <li><strong data-i18n="proj_tech">Core Technologies:</strong> Azure OpenAI Service, Azure Vision Service, Azure Speech Service, AI Agents, etc.</li>
                     </ul>
                 </div>
 
@@ -111,11 +153,11 @@
                         <span class="date">10/2025 – 05/2026</span>
                     </div>
                     <ul class="bullet-list">
-                        <li><strong>Project Size:</strong> 03 members</li>
-                        <li><strong>Position:</strong> Team Lead</li>
-                        <li><strong>Project Description:</strong> Development of a highly secure multi-agent AI system for managing and analyzing sensitive oil and gas data for the Vietnamese government.</li>
-                        <li><strong>Job Description:</strong> Served as the primary technical liaison, managing regular client communications to align business needs with technical delivery. Architected the system's core infrastructure, provided solutions for complex scalability issues, and defined long-term technical strategies. Led the engineering team in implementing advanced multi-agent workflows and core Azure-based services.</li>
-                        <li><strong>Core Technologies:</strong> Multi-Agent Frameworks (LangChain, AzureFrameworks), Azure AI Services, OpenAI, Machine Learning, NLP, Fan-in/Fan-out Architecture.</li>
+                        <li><strong data-i18n="proj_size">Project Size:</strong> <span data-i18n="proj_mem_3">03 members</span></li>
+                        <li><strong data-i18n="proj_pos">Position:</strong> <span data-i18n="pos_team_lead">Team Lead</span></li>
+                        <li><strong data-i18n="proj_desc">Project Description:</strong> <span data-i18n="oil_desc">Development of a highly secure multi-agent AI system for managing and analyzing sensitive oil and gas data for the Vietnamese government.</span></li>
+                        <li><strong data-i18n="proj_job">Job Description:</strong> <span data-i18n="oil_job">Served as the primary technical liaison, managing regular client communications to align business needs with technical delivery. Architected the system's core infrastructure, provided solutions for complex scalability issues, and defined long-term technical strategies. Led the engineering team in implementing advanced multi-agent workflows and core Azure-based services.</span></li>
+                        <li><strong data-i18n="proj_tech">Core Technologies:</strong> Multi-Agent Frameworks (LangChain, AzureFrameworks), Azure AI Services, OpenAI, Machine Learning, NLP, Fan-in/Fan-out Architecture.</li>
                     </ul>
                 </div>
 
@@ -125,11 +167,11 @@
                         <span class="date">01/2025 – 11/2025</span>
                     </div>
                     <ul class="bullet-list">
-                        <li><strong>Project Size:</strong> 30 members</li>
-                        <li><strong>Position:</strong> Developer</li>
-                        <li><strong>Project Description:</strong> Enhancing and expanding the platform’s features to improve the learning experience and support more subjects.</li>
-                        <li><strong>Job Description:</strong> Responsible for developing and implementing features on support services and data management-related services.</li>
-                        <li><strong>Core Technologies:</strong> NestJS, React, Flask, Airflow, Minio, etc.</li>
+                        <li><strong data-i18n="proj_size">Project Size:</strong> <span data-i18n="proj_mem_30">30 members</span></li>
+                        <li><strong data-i18n="proj_pos">Position:</strong> <span data-i18n="pos_dev">Developer</span></li>
+                        <li><strong data-i18n="proj_desc">Project Description:</strong> <span data-i18n="edu_desc">Enhancing and expanding the platform’s features to improve the learning experience and support more subjects.</span></li>
+                        <li><strong data-i18n="proj_job">Job Description:</strong> <span data-i18n="edu_job">Responsible for developing and implementing features on support services and data management-related services.</span></li>
+                        <li><strong data-i18n="proj_tech">Core Technologies:</strong> NestJS, React, Flask, Airflow, Minio, etc.</li>
                     </ul>
                 </div>
 
@@ -139,11 +181,11 @@
                         <span class="date">12/2023 – 10/2025</span>
                     </div>
                     <ul class="bullet-list">
-                        <li><strong>Project Size:</strong> 04 members</li>
-                        <li><strong>Position:</strong> AI Engineer</li>
-                        <li><strong>Project Description:</strong> Developed by Arise Innovation Inc, this system integrates modern generative AI with traditional AI models. Targets high-security data from banks, enabling secure and intelligent analysis of end-user data.</li>
-                        <li><strong>Job Description:</strong> Perform data analysis, processing, and evaluation; assess and select LLM models; enhance NLP by combining ML algorithms with prompt engineering; analyze and apply advanced techniques to improve RAG efficiency, etc.</li>
-                        <li><strong>Core Technologies:</strong> LLMs, RAG, PE, DA, NLP, ML Algorithms, Flask, Azure Services, etc.</li>
+                        <li><strong data-i18n="proj_size">Project Size:</strong> <span data-i18n="proj_mem_4">04 members</span></li>
+                        <li><strong data-i18n="proj_pos">Position:</strong> <span data-i18n="pos_ai_eng">AI Engineer</span></li>
+                        <li><strong data-i18n="proj_desc">Project Description:</strong> <span data-i18n="airealize_desc">Developed by Arise Innovation Inc, this system integrates modern generative AI with traditional AI models. Targets high-security data from banks, enabling secure and intelligent analysis of end-user data.</span></li>
+                        <li><strong data-i18n="proj_job">Job Description:</strong> <span data-i18n="airealize_job">Perform data analysis, processing, and evaluation; assess and select LLM models; enhance NLP by combining ML algorithms with prompt engineering; analyze and apply advanced techniques to improve RAG efficiency, etc.</span></li>
+                        <li><strong data-i18n="proj_tech">Core Technologies:</strong> LLMs, RAG, PE, DA, NLP, ML Algorithms, Flask, Azure Services, etc.</li>
                     </ul>
                 </div>
 
@@ -153,11 +195,11 @@
                         <span class="date">10/2024 – 12/2024</span>
                     </div>
                     <ul class="bullet-list">
-                        <li><strong>Project Size:</strong> 04 members</li>
-                        <li><strong>Position:</strong> AI Engineer</li>
-                        <li><strong>Project Description:</strong> A proof-of-concept (POC) project aimed at developing advanced AI Vision models leveraging AWS SageMaker to fine-tune and evaluate VLMs for OCR tasks.</li>
-                        <li><strong>Job Description:</strong> Utilize AWS SageMaker to fine-tune renowned VLMs (e.g., QwenVL, Mistral). Apply machine learning algorithms to evaluate the model’s experimental results for the target task.</li>
-                        <li><strong>Core Technologies:</strong> VLM, AWS Cloud/SDK, Huggingface, NLP, etc.</li>
+                        <li><strong data-i18n="proj_size">Project Size:</strong> <span data-i18n="proj_mem_4">04 members</span></li>
+                        <li><strong data-i18n="proj_pos">Position:</strong> <span data-i18n="pos_ai_eng">AI Engineer</span></li>
+                        <li><strong data-i18n="proj_desc">Project Description:</strong> <span data-i18n="vlm_desc">A proof-of-concept (POC) project aimed at developing advanced AI Vision models leveraging AWS SageMaker to fine-tune and evaluate VLMs for OCR tasks.</span></li>
+                        <li><strong data-i18n="proj_job">Job Description:</strong> <span data-i18n="vlm_job">Utilize AWS SageMaker to fine-tune renowned VLMs (e.g., QwenVL, Mistral). Apply machine learning algorithms to evaluate the model’s experimental results for the target task.</span></li>
+                        <li><strong data-i18n="proj_tech">Core Technologies:</strong> VLM, AWS Cloud/SDK, Huggingface, NLP, etc.</li>
                     </ul>
                 </div>
 
@@ -167,11 +209,11 @@
                         <span class="date">06/2024 – 09/2024</span>
                     </div>
                     <ul class="bullet-list">
-                        <li><strong>Project Size:</strong> 15 members</li>
-                        <li><strong>Position:</strong> Developer</li>
-                        <li><strong>Project Description:</strong> Used to manage departments' and stores’ expenditures and revenues across the entire system. Build monthly, quarterly or yearly reports on profit or loss.</li>
-                        <li><strong>Job Description:</strong> Participate in server configuration, process financial data (Big Data), and enhance system functionalities.</li>
-                        <li><strong>Core Technologies:</strong> ReactJS, NodeJS, Python, Golang, MongoDB, Redis, etc.</li>
+                        <li><strong data-i18n="proj_size">Project Size:</strong> <span data-i18n="proj_mem_15">15 members</span></li>
+                        <li><strong data-i18n="proj_pos">Position:</strong> <span data-i18n="pos_dev">Developer</span></li>
+                        <li><strong data-i18n="proj_desc">Project Description:</strong> <span data-i18n="budget_desc">Used to manage departments' and stores’ expenditures and revenues across the entire system. Build monthly, quarterly or yearly reports on profit or loss.</span></li>
+                        <li><strong data-i18n="proj_job">Job Description:</strong> <span data-i18n="budget_job">Participate in server configuration, process financial data (Big Data), and enhance system functionalities.</span></li>
+                        <li><strong data-i18n="proj_tech">Core Technologies:</strong> ReactJS, NodeJS, Python, Golang, MongoDB, Redis, etc.</li>
                     </ul>
                 </div>
 
@@ -181,40 +223,37 @@
                         <span class="date">04/2023 – 11/2023</span>
                     </div>
                     <ul class="bullet-list">
-                        <li><strong>Project Size:</strong> 02 members</li>
-                        <li><strong>Position:</strong> Data Science</li>
-                        <li><strong>Project Description:</strong> Integration and enhancement of oil well prediction models for the Vietnam Petroleum Institute (VPI). The goal is to analyze and process geophysical data, train ML models, and predict reservoirs based on geophysical properties.</li>
-                        <li><strong>Job Description:</strong> Perform data analysis, model training, and reporting on ML models. Develop tools for automated testing to enable flexible data expansion without dependency.</li>
-                        <li><strong>Core Technologies:</strong> Pandas, Numpy, ML, DL, Dash, Python, etc.</li>
+                        <li><strong data-i18n="proj_size">Project Size:</strong> <span data-i18n="proj_mem_2">02 members</span></li>
+                        <li><strong data-i18n="proj_pos">Position:</strong> <span data-i18n="pos_data_sci">Data Science</span></li>
+                        <li><strong data-i18n="proj_desc">Project Description:</strong> <span data-i18n="oilwell_desc">Integration and enhancement of oil well prediction models for the Vietnam Petroleum Institute (VPI). The goal is to analyze and process geophysical data, train ML models, and predict reservoirs based on geophysical properties.</span></li>
+                        <li><strong data-i18n="proj_job">Job Description:</strong> <span data-i18n="oilwell_job">Perform data analysis, model training, and reporting on ML models. Develop tools for automated testing to enable flexible data expansion without dependency.</span></li>
+                        <li><strong data-i18n="proj_tech">Core Technologies:</strong> Pandas, Numpy, ML, DL, Dash, Python, etc.</li>
                     </ul>
                 </div>
             </section>
 
-            <section id="certifications" class="cv-section">
+            <!-- <section id="certifications" class="cv-section">
                 <h3>CERTIFICATIONS</h3>
                 <div class="cv-item">
-                    <ul class="bullet-list">
-                        <li>No certifications yet</li>
-                    </ul>
-                    <!-- <div class="cv-item-header certification">
-                        <h4>Azure AI Engineer Associate (AI-102)</h4>
-                        <div><span class="issuer">Microsoft</span> | <span class="date">2022</span></div>
-                    </div> -->
+                    <div class="cv-item-header certification">
+                        <h4>Microsoft Certified: Azure AI Engineer Associate (AI-102)</h4>
+                        <div><span class="issuer">Microsoft</span> | <span class="date">2025</span></div>
+                    </div>
                 </div>
-            </section>
+            </section>  -->
 
             <section id="prize" class="cv-section">
-                <h3>PRIZE</h3>
+                <h3 data-i18n="prize_title">PRIZE</h3>
                 <ul class="bullet-list">
-                    <li>Typical individual in 2023 of TinhVan Software.</li>
-                    <li>Typical individual in 2024 of TinhVan Software.</li>
-                    <li>Typical individual in 2025 of TinhVan Software.</li>
+                    <li data-i18n="prize_2023">Typical individual in 2023 of TinhVan Software.</li>
+                    <li data-i18n="prize_2024">Typical individual in 2024 of TinhVan Software.</li>
+                    <li data-i18n="prize_2025">Typical individual in 2025 of TinhVan Software.</li>
                 </ul>
             </section>
         </main>
         
         <footer>
-            <p>&copy; <span id="year"></span> TRAN VAN AN. Built with pure HTML/CSS/JS.</p>
+            <p>&copy; <span id="year"></span> TRAN VAN AN. <span data-i18n="footer_text">Built with pure HTML/CSS/JS.</span></p>
         </footer>
     </div>
     <script src="script.js"></script>
