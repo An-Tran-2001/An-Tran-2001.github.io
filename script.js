@@ -168,4 +168,141 @@ document.addEventListener('DOMContentLoaded', () => {
 
         animate();
     }
+
+    // Story Modal Logic
+    const storyModal = document.getElementById('story-modal');
+    if (storyModal) {
+        const modalBackdrop = storyModal.querySelector('.modal-backdrop');
+        const closeModalBtn = storyModal.querySelector('.close-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDate = document.getElementById('modal-date');
+        const modalDesc = document.getElementById('modal-desc');
+        
+        const modalCarousel = document.getElementById('modal-carousel');
+        const modalCarouselContainer = document.getElementById('modal-carousel-container');
+        const prevBtn = document.getElementById('modal-prev');
+        const nextBtn = document.getElementById('modal-next');
+        const dotsContainer = document.getElementById('modal-dots');
+        
+        let currentImages = [];
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            if (currentImages.length === 0) return;
+            modalCarousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            const dots = dotsContainer.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+            
+            if (currentImages.length <= 1) {
+                prevBtn.style.display = 'none';
+                nextBtn.style.display = 'none';
+                dotsContainer.style.display = 'none';
+            } else {
+                prevBtn.style.display = 'flex';
+                nextBtn.style.display = 'flex';
+                dotsContainer.style.display = 'flex';
+            }
+        }
+
+        function openModal(title, date, desc, images) {
+            modalTitle.textContent = title;
+            modalDate.textContent = date;
+            modalDesc.textContent = desc;
+            
+            currentImages = images;
+            currentIndex = 0;
+            
+            modalCarousel.innerHTML = '';
+            dotsContainer.innerHTML = '';
+            
+            if (images.length > 0) {
+                modalCarouselContainer.style.display = 'flex';
+                images.forEach((src, index) => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    modalCarousel.appendChild(img);
+                    
+                    if (images.length > 1) {
+                        const dot = document.createElement('div');
+                        dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+                        dot.addEventListener('click', () => {
+                            currentIndex = index;
+                            updateCarousel();
+                        });
+                        dotsContainer.appendChild(dot);
+                    }
+                });
+                updateCarousel();
+            } else {
+                modalCarouselContainer.style.display = 'none';
+            }
+            
+            storyModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            storyModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+        if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (currentImages.length <= 1) return;
+                currentIndex = (currentIndex === 0) ? currentImages.length - 1 : currentIndex - 1;
+                updateCarousel();
+            });
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (currentImages.length <= 1) return;
+                currentIndex = (currentIndex === currentImages.length - 1) ? 0 : currentIndex + 1;
+                updateCarousel();
+            });
+        }
+
+        document.querySelectorAll('.timeline-flex').forEach(item => {
+            item.addEventListener('click', () => {
+                const title = item.querySelector('.timeline-title')?.innerText || '';
+                const date = item.querySelector('.timeline-date')?.innerText || '';
+                const desc = item.querySelector('.timeline-desc')?.innerText || '';
+                
+                const imgElements = item.querySelectorAll('.timeline-image');
+                const images = Array.from(imgElements).map(img => img.src);
+                
+                openModal(title, date, desc, images);
+            });
+        });
+    }
+
+    // Story Filter Logic
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const yearToFilter = btn.getAttribute('data-year');
+                const timelineItems = document.querySelectorAll('.timeline-item');
+
+                timelineItems.forEach(item => {
+                    const dateText = item.querySelector('.timeline-date')?.innerText || '';
+                    if (yearToFilter === 'all' || dateText.includes(yearToFilter)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
 });

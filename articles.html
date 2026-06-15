@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAN VAN AN - Articles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="translations.js"></script>
+</head>
+<body>
+    <canvas id="neural-bg"></canvas>
+    
+    <nav class="side-nav">
+        <div class="nav-links">
+            <div class="nav-group-title" data-i18n="nav_group_1">PORTFOLIO</div>
+            <a href="index.html#education" data-i18n="education_nav">Education</a>
+            <a href="index.html#skills" data-i18n="skills_nav">Skills</a>
+            <a href="index.html#experience" data-i18n="experience_nav">Experience</a>
+            <a href="index.html#projects" data-i18n="projects_nav">Projects</a>
+            <a href="index.html#prize" data-i18n="prize_nav">Prize</a>
+            
+            <div class="nav-group-title" data-i18n="nav_group_2">EXPLORE</div>
+            <a href="story.html" data-i18n="story_nav">Story</a>
+            <a href="articles.html" data-i18n="articles_nav" style="border-left: 2px solid var(--link-color); color: var(--text-primary);">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-switcher">
+                <select id="lang-select" aria-label="Select Language">
+                    <option value="en" selected>EN</option>
+                    <option value="vn">VN</option>
+                    <option value="jp">JP</option>
+                    <option value="cn">CN</option>
+                </select>
+            </div>
+            <a href="assets/CV_06_2026.pdf" download="TRAN_VAN_AN_CV.pdf" class="btn-download">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span data-i18n="download_cv">Download CV</span>
+            </a>
+        </div>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sun-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+
+    <div class="container">
+        <header class="profile-header" style="margin-bottom: 2rem;">
+            <div class="profile-info">
+                <h1 data-i18n="articles_nav" style="text-transform: uppercase;">Articles</h1>
+                <h2 class="subtitle">Selected Papers & Technical Writing</h2>
+            </div>
+        </header>
+
+        <main>
+            <div class="articles-list">
+                
+                <div class="article-item">
+                    <h3 class="article-title">
+                        <a href="#" target="_blank" rel="noopener noreferrer">Advanced Multi-Agent Frameworks for High-Security Data Processing (PREVIEW)</a>
+                    </h3>
+                    <div class="article-meta">
+                        <span class="date">May 2026</span>
+                        <span class="publisher">AI Conference Proceedings</span>
+                    </div>
+                    <p class="article-desc">An in-depth look into orchestrating intelligent agents using LangChain and Azure Services to handle sensitive government oil and gas data. The paper discusses fan-in/fan-out architectures and memory-based self-learning logic.</p>
+                    <div class="article-tags">
+                        <span class="article-tag">Multi-Agent</span>
+                        <span class="article-tag">Data Security</span>
+                        <span class="article-tag">Azure</span>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; <span id="year"></span> TRAN VAN AN. <span data-i18n="footer_text">Built with pure HTML/CSS/JS.</span></p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

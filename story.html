@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAN VAN AN - Story</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="translations.js"></script>
+</head>
+<body>
+    <canvas id="neural-bg"></canvas>
+    
+    <nav class="side-nav">
+        <div class="nav-links">
+            <div class="nav-group-title" data-i18n="nav_group_1">PORTFOLIO</div>
+            <a href="index.html#education" data-i18n="education_nav">Education</a>
+            <a href="index.html#skills" data-i18n="skills_nav">Skills</a>
+            <a href="index.html#experience" data-i18n="experience_nav">Experience</a>
+            <a href="index.html#projects" data-i18n="projects_nav">Projects</a>
+            <a href="index.html#prize" data-i18n="prize_nav">Prize</a>
+            
+            <div class="nav-group-title" data-i18n="nav_group_2">EXPLORE</div>
+            <a href="story.html" data-i18n="story_nav" style="border-left: 2px solid var(--link-color); color: var(--text-primary);">Story</a>
+            <a href="articles.html" data-i18n="articles_nav">Articles</a>
+        </div>
+        <div class="nav-actions">
+            <div class="lang-switcher">
+                <select id="lang-select" aria-label="Select Language">
+                    <option value="en" selected>EN</option>
+                    <option value="vn">VN</option>
+                    <option value="jp">JP</option>
+                    <option value="cn">CN</option>
+                </select>
+            </div>
+            <a href="assets/CV_06_2026.pdf" download="TRAN_VAN_AN_CV.pdf" class="btn-download">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span data-i18n="download_cv">Download CV</span>
+            </a>
+        </div>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sun-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+
+    <div class="container container-wide">
+        <header class="profile-header" style="margin-bottom: 2rem;">
+            <div class="profile-info">
+                <h1>MY STORY</h1>
+                <h2 class="subtitle" data-i18n="story_subtitle">The Journey So Far</h2>
+            </div>
+        </header>
+
+        <main>
+            <div class="story-layout">
+                <div class="timeline" id="story-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content timeline-flex">
+                        <div class="timeline-text">
+                            <div class="timeline-date" data-i18n="story_date_9">06/2026</div>
+                            <h4 class="timeline-title" data-i18n="story_title_9">Top 2 in TinhVan AI Hackathon</h4>
+                            <p class="timeline-desc" data-i18n="story_desc_9">Achieved Top 2 in the 24-hour hackathon, recognized for developing an innovative AI-driven software solution.</p>
+                        </div>
+                        <div class="timeline-gallery">
+                            <img src="assets/story/hackathon_2026/img2.jpeg" alt="Hackathon 1" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=H&size=400&background=random&color=fff'">
+                            <img src="assets/story/hackathon_2026/img1.jpeg" alt="Hackathon 2" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=A&size=400&background=random&color=fff'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content timeline-flex">
+                        <div class="timeline-text">
+                            <div class="timeline-date" data-i18n="story_date_8">01/2026</div>
+                            <h4 class="timeline-title" data-i18n="story_title_8">Dual Awards: Typical & Excellent Individual</h4>
+                            <p class="timeline-desc" data-i18n="story_desc_8">Proudly received both the 'Typical Individual in 2025' and 'Excellent Individual of the Group' awards at TinhVan.</p>
+                        </div>
+                        <!-- <div class="timeline-gallery">
+                            <img src="" alt="Award 1" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=A&size=400&background=random&color=fff'">
+                            <img src="" alt="Award 2" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=W&size=400&background=random&color=fff'">
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content timeline-flex">
+                        <div class="timeline-text">
+                            <div class="timeline-date" data-i18n="story_date_7">04/2025</div>
+                            <h4 class="timeline-title" data-i18n="story_title_7">Chinese Language Student at HOU</h4>
+                            <p class="timeline-desc" data-i18n="story_desc_7">Enrolled at Hanoi Open University to pursue a degree in Chinese Language, expanding linguistic and cultural capabilities.</p>
+                        </div>
+                        <!-- <div class="timeline-gallery">
+                            <img src="" alt="HOU 1" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=C&size=400&background=random&color=fff'">
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content timeline-flex">
+                        <div class="timeline-text">
+                            <div class="timeline-date" data-i18n="story_date_6">01/2025</div>
+                            <h4 class="timeline-title" data-i18n="story_title_6">Typical Individual 2024 Award</h4>
+                            <p class="timeline-desc" data-i18n="story_desc_6">Recognized once again with the 'Typical Individual in 2024' award for sustained excellence and innovation.</p>
+                        </div>
+                        <!-- <div class="timeline-gallery">
+                            <img src="" alt="Award 24 1" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=T&size=400&background=random&color=fff'">
+                            <img src="" alt="Award 24 2" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=I&size=400&background=random&color=fff'">
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content timeline-flex">
+                        <div class="timeline-text">
+                            <div class="timeline-date" data-i18n="story_date_5">06/2024</div>
+                            <h4 class="timeline-title" data-i18n="story_title_5">Graduation from HUMG</h4>
+                            <p class="timeline-desc" data-i18n="story_desc_5">Officially graduated from Hanoi University of Mining and Technology with an Engineering degree in Computer Science (Classification: Good).</p>
+                        </div>
+                        <div class="timeline-gallery">
+                            <img src="assets/story/humg_graduate/1.jpeg" alt="Graduation 1" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=G&size=400&background=random&color=fff'">
+                            <img src="assets/story/humg_graduate/2.jpeg" alt="Graduation 2" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=R&size=400&background=random&color=fff'">
+                            <img src="assets/story/humg_graduate/3.jpeg" alt="Graduation 3" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=A&size=400&background=random&color=fff'">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content timeline-flex">
+                        <div class="timeline-text">
+                            <div class="timeline-date" data-i18n="story_date_4">01/2024</div>
+                            <h4 class="timeline-title" data-i18n="story_title_4">Typical Individual 2023 Award</h4>
+                            <p class="timeline-desc" data-i18n="story_desc_4">Honored with the 'Typical Individual in 2023' award at TinhVan Software for outstanding contributions.</p>
+                        </div>
+                        <!-- <div class="timeline-gallery">
+                            <img src="" alt="Award 23 1" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=2&size=400&background=random&color=fff'">
+                            <img src="" alt="Award 23 2" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=0&size=400&background=random&color=fff'">
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content timeline-flex">
+                        <div class="timeline-text">
+                            <div class="timeline-date" data-i18n="story_date_3">05/2023</div>
+                            <h4 class="timeline-title" data-i18n="story_title_3">AI Engineer at TinhVan</h4>
+                            <p class="timeline-desc" data-i18n="story_desc_3">Officially took on the role of AI Engineer, focusing on LLMs, generative AI, and advanced data processing models.</p>
+                        </div>
+                        <!-- <div class="timeline-gallery">
+                            <img src="" alt="AI 1" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=A&size=400&background=random&color=fff'">
+                            <img src="" alt="AI 2" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=I&size=400&background=random&color=fff'">
+                            <img src="" alt="AI 3" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=E&size=400&background=random&color=fff'">
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content timeline-flex">
+                        <div class="timeline-text">
+                            <div class="timeline-date" data-i18n="story_date_2">01/2023</div>
+                            <h4 class="timeline-title" data-i18n="story_title_2">Data Analyst Intern at TinhVan</h4>
+                            <p class="timeline-desc" data-i18n="story_desc_2">Joined TinhVan Software as a Data Analyst Intern, starting the transition towards data science and AI.</p>
+                        </div>
+                        <!-- <div class="timeline-gallery">
+                            <img src="" alt="DA 1" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=D&size=400&background=random&color=fff'">
+                            <img src="" alt="DA 2" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=A&size=400&background=random&color=fff'">
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content timeline-flex">
+                        <div class="timeline-text">
+                            <div class="timeline-date" data-i18n="story_date_1">12/2022</div>
+                            <h4 class="timeline-title" data-i18n="story_title_1">Backend Developer Intern</h4>
+                            <p class="timeline-desc" data-i18n="story_desc_1">Began professional journey as a Backend Developer Intern at FIT.</p>
+                        </div>
+                        <!-- <div class="timeline-gallery">
+                            <img src="" alt="BE 1" class="timeline-image" onerror="this.src='https://ui-avatars.com/api/?name=B&size=400&background=random&color=fff'">
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+                
+                <aside class="story-filter">
+                    <h3 data-i18n="filter_year">Filter by Year</h3>
+                    <div class="filter-buttons" id="filter-buttons">
+                        <button class="filter-btn active" data-year="all" data-i18n="filter_all">All</button>
+                        <button class="filter-btn" data-year="2026">2026</button>
+                        <button class="filter-btn" data-year="2025">2025</button>
+                        <button class="filter-btn" data-year="2024">2024</button>
+                        <button class="filter-btn" data-year="2023">2023</button>
+                        <button class="filter-btn" data-year="2022">2022</button>
+                    </div>
+                </aside>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; <span id="year"></span> TRAN VAN AN. <span data-i18n="footer_text">Built with pure HTML/CSS/JS.</span></p>
+        </footer>
+    </div>
+
+    <!-- Story Modal -->
+    <div id="story-modal" class="modal hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-text">
+                    <div class="modal-date" id="modal-date"></div>
+                    <h3 class="modal-title" id="modal-title"></h3>
+                    <p class="modal-desc" id="modal-desc"></p>
+                </div>
+                <div class="modal-carousel-container" id="modal-carousel-container">
+                    <button class="carousel-btn prev-btn" id="modal-prev" aria-label="Previous image">❮</button>
+                    <div class="modal-carousel" id="modal-carousel">
+                        <!-- Images injected by JS -->
+                    </div>
+                    <button class="carousel-btn next-btn" id="modal-next" aria-label="Next image">❯</button>
+                    <div class="carousel-dots" id="modal-dots"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
