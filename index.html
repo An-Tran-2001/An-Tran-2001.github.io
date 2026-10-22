@@ -46,10 +46,12 @@
     <nav class="side-nav">
         <div class="nav-links">
             <div class="nav-group-title" data-i18n="nav_group_1">PORTFOLIO</div>
+            <a href="index.html#summary" data-i18n="summary_nav">Summary</a>
             <a href="index.html#education" data-i18n="education_nav">Education</a>
             <a href="index.html#skills" data-i18n="skills_nav">Skills</a>
             <a href="index.html#experience" data-i18n="experience_nav">Experience</a>
             <a href="index.html#projects" data-i18n="projects_nav">Projects</a>
+            <a href="index.html#languages" data-i18n="languages_nav">Languages</a>
             <a href="index.html#prize" data-i18n="prize_nav">Prize</a>
             
             <div class="nav-group-title" data-i18n="nav_group_2">EXPLORE</div>
@@ -65,7 +67,7 @@
                     <option value="cn">CN</option>
                 </select>
             </div>
-            <a href="assets/CV_06_2026.pdf" download="TRAN_VAN_AN_CV.pdf" class="btn-download">
+            <a href="assets/CV_2026.pdf" download="TRAN_VAN_AN_CV.pdf" class="btn-download">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
                 <span data-i18n="download_cv">Download CV</span>
             </a>
@@ -80,10 +82,10 @@
         <header class="profile-header">
             <div class="profile-info">
                 <h1>TRAN VAN AN</h1>
-                <h2 class="subtitle" data-i18n="subtitle">AI Engineer</h2>
+                <h2 class="subtitle" data-i18n="subtitle">AI & Software Engineer</h2>
                 <div class="contact-info">
-                    <p><span data-i18n="location">Hanoi</span> | <a href="mailto:tranandeveloper@tinhvan.com">tranandeveloper@gmail.com</a> | <a href="tel:+84329962262">+84 329 962 262</a></p>
-                    <p><a href="https://github.com/An-Tran-2001" target="_blank" rel="noopener noreferrer">github.com/An-Tran</a> | <a href="https://www.linkedin.com/in/an-tran-694760304" target="_blank" rel="noopener noreferrer">linkedin.com/in/an-tran</a></p>
+                    <p><span data-i18n="location">Hanoi</span> | <a href="mailto:tranandeveloper@tinhvan.com">tranandeveloper@tinhvan.com</a> | <a href="tel:+84329962262">+84 329 962 262</a></p>
+                    <p><a href="https://github.com/An-Tran-2001" target="_blank" rel="noopener noreferrer">github.com/An-Tran</a> | <a href="https://www.linkedin.com/in/an-tran" target="_blank" rel="noopener noreferrer">linkedin.com/in/an-tran</a></p>
                 </div>
             </div>
             <div class="profile-avatar">
@@ -92,6 +94,11 @@
         </header>
 
         <main>
+            <section id="summary" class="cv-section">
+                <h3 data-i18n="summary_title">PROFESSIONAL SUMMARY</h3>
+                <p class="cv-desc" data-i18n="summary_desc">AI and Software Engineer with over 4+ years of experience in developing AI-powered applications, backend services, RESTful APIs, and enterprise systems. Specialized in Python, with strong experience in FastAPI, Flask, AI/ML, RAG, LLM/VLM, and backend system development. Strong understanding of software architecture, databases, Microservices, MVC, cloud platforms, DevOps, and production-oriented system development.</p>
+            </section>
+
             <section id="education" class="cv-section">
                 <h3 data-i18n="education_title">EDUCATION</h3>
                 <div class="cv-item">
@@ -104,19 +111,29 @@
                         <span data-i18n="grad_class">Graduation Classification: Engineer - Good</span>
                     </div>
                 </div>
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <h4 data-i18n="uni_hou_name">Hanoi Open University</h4>
+                        <span class="date">2025 – Current</span>
+                    </div>
+                    <div class="cv-item-subheader">
+                        <span data-i18n="major_chinese">Major: Chinese Language</span>
+                        <span data-i18n="status_studying">Status: Currently Studying</span>
+                    </div>
+                </div>
             </section>
 
             <section id="skills" class="cv-section">
                 <h3 data-i18n="skills_title">TECHNICAL SKILLS</h3>
                 <ul class="skills-list">
                     <li><strong>AI/ML:</strong> <span data-i18n="skill_aiml">Expertise in data analysis, data processing, machine learning, deep learning (Neural Networks), advanced RAG, and advanced Prompt Engineering (Step back, Chain-of-Thought, etc).</span></li>
-                    <li><strong>Programming:</strong> <span data-i18n="skill_prog">Proficient in Python (main), JavaScript (secondary), with basic knowledge of other languages.</span></li>
+                    <li><strong>Programming:</strong> <span data-i18n="skill_prog">Python (main), JavaScript (secondary), Java, C++, C#, etc.</span></li>
                     <li><strong>Database Management Systems:</strong> <span data-i18n="skill_db">MySQL, PostgreSQL, MongoDB, Redis, Cosmos DB, etc.</span></li>
                     <li><strong>Cloud:</strong> <span data-i18n="skill_cloud">Hands-on experience with Azure (Azure ML, OpenAI, Cosmos DB, etc.) and AWS (SageMaker, Bedrock, S3, etc.).</span></li>
-                    <li><strong>DevOps & Tools:</strong> <span data-i18n="skill_devops">Docker, Docker Compose, GitLab CI/CD, GitHub Actions, Linux, Bash, Git.</span></li>
+                    <li><strong>DevOps & Tools:</strong> <span data-i18n="skill_devops">Docker, Kubernetes, GitLab CI/CD, GitHub Actions, Linux, Bash, Git, ArgoCD, Prometheus, Grafana, etc.</span></li>
                     <li><strong>Development:</strong> <span data-i18n="skill_dev">Familiar with Windows, Linux environments.</span></li>
                     <li><strong>Third-party Payment Services:</strong> <span data-i18n="skill_payment">Vnpay, Vitapay, etc.</span></li>
-                    <li><strong>Software Design:</strong> <span data-i18n="skill_design">Strong grasp of design patterns (Singleton, Factory, Observer, Strategy) and architectural models (MVC, MVT, DDD, Microservices).</span></li>
+                    <li><strong>Software Design:</strong> <span data-i18n="skill_design">Strong grasp of design patterns (Singleton, Factory, Observer, Strategy, etc) and architectural models (MVC, MVT, DDD, Microservices, etc).</span></li>
                 </ul>
             </section>
 
@@ -127,12 +144,44 @@
                         <h4>TinhVan Software JSC</h4>
                         <span class="date">01/2023 – Current</span>
                     </div>
-                    <p class="role" data-i18n="exp_pos_1">Position: AI Engineer</p>
-                    <ul class="bullet-list">
-                        <li data-i18n="exp_desc_1_1">Develop AI models for chatbot systems and document processing.</li>
-                        <li data-i18n="exp_desc_1_2">Work on RAG technique, query optimization, and backend/frontend development.</li>
-                        <li data-i18n="exp_desc_1_3">Research and fine-tune LLM/VLM using Azure/AWS Cloud.</li>
-                    </ul>
+
+                    <div class="experience-role" style="margin-top: 0.75rem; margin-bottom: 0.75rem;">
+                        <div class="cv-item-header" style="margin-bottom: 0.25rem;">
+                            <strong style="color: var(--text-primary); font-size: 0.95rem;" data-i18n="exp_role_deputy">Deputy Manager, R&D Department</strong>
+                            <span class="date">07/2026 – Current</span>
+                        </div>
+                        <ul class="bullet-list">
+                            <li data-i18n="exp_deputy_1">Lead research, analysis, benchmarking, and performance evaluation of emerging Generative AI technologies, including LLM/VLM families such as Qwen and DeepSeek, as well as local model serving and inference frameworks such as Ollama.</li>
+                            <li data-i18n="exp_deputy_2">Design and conduct experiments to evaluate AI models across accuracy, reasoning capability, latency, resource utilization, and suitability for real-world enterprise use cases.</li>
+                            <li data-i18n="exp_deputy_3">Serve as a member of the AI Champions team, researching emerging AI trends and identifying opportunities to apply AI across the company’s daily workflows.</li>
+                            <li data-i18n="exp_deputy_4">Propose and conduct Proof-of-Concept (PoC) initiatives for AI tools and solutions aimed at improving employee productivity, work quality, and operational efficiency.</li>
+                            <li data-i18n="exp_deputy_5">Translate research findings and experimental results into technical recommendations and practical AI adoption strategies for internal teams and business applications.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-role" style="margin-top: 1rem; margin-bottom: 0.75rem;">
+                        <div class="cv-item-header" style="margin-bottom: 0.25rem;">
+                            <strong style="color: var(--text-primary); font-size: 0.95rem;" data-i18n="exp_role_lead">AI Team Leader</strong>
+                            <span class="date">01/2024 – 06/2026</span>
+                        </div>
+                        <ul class="bullet-list">
+                            <li data-i18n="exp_lead_1">Led the development of AI-powered chatbot and document processing solutions, with a focus on RAG pipelines, retrieval quality, and query optimization.</li>
+                            <li data-i18n="exp_lead_2">Designed and optimized end-to-end AI systems integrating LLM/VLM models with backend services and user-facing applications.</li>
+                            <li data-i18n="exp_lead_3">Guided team members in model experimentation, fine-tuning, evaluation, deployment, and cloud-based AI development on Azure and AWS.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-role" style="margin-top: 1rem;">
+                        <div class="cv-item-header" style="margin-bottom: 0.25rem;">
+                            <strong style="color: var(--text-primary); font-size: 0.95rem;" data-i18n="exp_role_eng">AI Engineer</strong>
+                            <span class="date">01/2023 – 12/2023</span>
+                        </div>
+                        <ul class="bullet-list">
+                            <li data-i18n="exp_eng_1">Developed AI models and pipelines for chatbot systems and intelligent document processing.</li>
+                            <li data-i18n="exp_eng_2">Implemented RAG techniques, information retrieval, query processing, and LLM-based application workflows.</li>
+                            <li data-i18n="exp_eng_3">Researched, fine-tuned, and deployed LLM/VLM models using Azure and AWS cloud infrastructure.</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
@@ -141,12 +190,26 @@
                 
                 <div class="cv-item">
                     <div class="cv-item-header">
+                        <h4>HR-CV Management System – AI-Powered Recruitment Platform</h4>
+                        <span class="date">04/2026 – Current</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li><strong data-i18n="proj_size">Project Size:</strong> <span data-i18n="proj_mem_2">02 members</span></li>
+                        <li><strong data-i18n="proj_pos">Position:</strong> <span data-i18n="pos_team_lead">Team Lead</span></li>
+                        <li><strong data-i18n="proj_desc">Project Description:</strong> <span data-i18n="hrcv_desc">Designed and developed an end-to-end, event-driven HR recruitment platform that automates CV/JD data extraction, candidate-job matching, and applicant pipeline tracking. Architected microservices with GitOps best practices, featuring an asynchronous AI agent engine, high-performance REST APIs, and a modern web dashboard.</span></li>
+                        <li><strong data-i18n="proj_job">Job Description:</strong> <span data-i18n="hrcv_job">Led system architecture and development for the 2-member team. Architected the event-driven ingestion pipeline connecting MinIO S3 notifications with Apache Kafka to trigger background AI processing. Built the multi-tiered AI Agent engine using LangGraph and LangChain with Pydantic structured outputs and LangSmith tracing. Implemented full GitOps automation using ArgoCD (App-of-Apps) and Helm on Kubernetes (k3s), and mentored the teammate on backend API design and code quality.</span></li>
+                        <li><strong data-i18n="proj_tech">Core Technologies:</strong> LangGraph, LangChain, OpenAI, FastAPI, Next.js 16, TypeScript, Apache Kafka, MinIO (S3), PostgreSQL, Redis, Kubernetes (k3s/k3d), Helm, ArgoCD, Docker.</li>
+                    </ul>
+                </div>
+
+                <div class="cv-item">
+                    <div class="cv-item-header">
                         <h4>DIT AI Research & Integration</h4>
                         <span class="date">05/2026 – Current</span>
                     </div>
                     <ul class="bullet-list">
                         <li><strong data-i18n="proj_size">Project Size:</strong> <span data-i18n="proj_mem_4">04 members</span></li>
-                        <li><strong data-i18n="proj_pos">Position:</strong> <span data-i18n="pos_tech_consultant">Technical Consultant / AI Supporter</span></li>
+                        <li><strong data-i18n="proj_pos">Position:</strong> <span data-i18n="pos_team_lead">Team Lead</span></li>
                         <li><strong data-i18n="proj_desc">Project Description:</strong> <span data-i18n="dit_desc">Research and experiment with advanced AI agent technologies for a Japanese company. Focus on integrating computer vision and speech processing for meeting analysis and AI-based automated scoring.</span></li>
                         <li><strong data-i18n="proj_job">Job Description:</strong> <span data-i18n="dit_job">Supported the team on technical issues. Pre-designed core components to ensure easy maintenance, and provided technical advice and solutions when necessary.</span></li>
                         <li><strong data-i18n="proj_tech">Core Technologies:</strong> Prompt Engineering, RAG, Azure Service (Foundry, Cognitive Service, Cosmos, etc.), fastapi, azure agent framework, langchain, etc.</li>
@@ -177,7 +240,7 @@
                         <li><strong data-i18n="proj_pos">Position:</strong> <span data-i18n="pos_dev">Developer</span></li>
                         <li><strong data-i18n="proj_desc">Project Description:</strong> <span data-i18n="edu_desc">Enhancing and expanding the platform’s features to improve the learning experience and support more subjects.</span></li>
                         <li><strong data-i18n="proj_job">Job Description:</strong> <span data-i18n="edu_job">Responsible for developing and implementing features on support services and data management-related services.</span></li>
-                        <li><strong data-i18n="proj_tech">Core Technologies:</strong> NestJS, React, Flask, Airflow, Minio, etc.</li>
+                        <li><strong data-i18n="proj_tech">Core Technologies:</strong> NestJS, React, Flask, Airflow, Minio, Apache Kafka, Kubernetes, Grafana, Prometheus, ArgoCD, etc.</li>
                     </ul>
                 </div>
 
@@ -238,22 +301,21 @@
                 </div>
             </section>
 
-            <!-- <section id="certifications" class="cv-section">
-                <h3>CERTIFICATIONS</h3>
-                <div class="cv-item">
-                    <div class="cv-item-header certification">
-                        <h4>Microsoft Certified: Azure AI Engineer Associate (AI-102)</h4>
-                        <div><span class="issuer">Microsoft</span> | <span class="date">2025</span></div>
-                    </div>
-                </div>
-            </section>  -->
+            <section id="languages" class="cv-section">
+                <h3 data-i18n="languages_title">LANGUAGES</h3>
+                <ul class="bullet-list">
+                    <li><strong data-i18n="lang_en_name">English:</strong> <span data-i18n="lang_en_desc">Basic proficiency; able to read and understand technical documentation related to software development, AI, and IT.</span></li>
+                    <li><strong data-i18n="lang_cn_name">Chinese (Mandarin):</strong> <span data-i18n="lang_cn_desc">HSK 3 equivalent; able to communicate in basic everyday conversations and understand commonly used Chinese.</span></li>
+                </ul>
+            </section>
 
             <section id="prize" class="cv-section">
                 <h3 data-i18n="prize_title">PRIZE</h3>
                 <ul class="bullet-list">
-                    <li data-i18n="prize_2023">Typical individual in 2023 of TinhVan Software.</li>
-                    <li data-i18n="prize_2024">Typical individual in 2024 of TinhVan Software.</li>
-                    <li data-i18n="prize_2025">Typical individual in 2025 of TinhVan Software.</li>
+                    <li data-i18n="prize_hackathon_2026">2nd Place – TinhVan Hackathon, May 2026.</li>
+                    <li data-i18n="prize_2025">Outstanding Employee of the Year 2025, TinhVan Software.</li>
+                    <li data-i18n="prize_2024">Outstanding Employee of the Year 2024, TinhVan Software.</li>
+                    <li data-i18n="prize_2023">Outstanding Employee of the Year 2023, TinhVan Software.</li>
                 </ul>
             </section>
         </main>
